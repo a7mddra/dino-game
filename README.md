@@ -1,59 +1,59 @@
-# react-chrome-dino
+# react-dino-game
 
-## Usage:
+A React component for the classic Google Chrome Dinosaur Game (T-Rex Runner). 
+Originally extracted from Chromium, this game has been packaged as a modern, easy-to-import React component with full TypeScript support.
 
 ![](screenshots/screenshot.png)
 
-Demo: https://mhasbini.com/miscs/react-chrome-dino-demo/index.html
+## Installation
 
-Install:
+Install via npm:
 
+```bash
+npm install @a7mddra/react-dino-game
 ```
-yarn add react-chrome-dino
-```
 
-```js
+## Usage
+
+Simply import the component and the accompanying styles, and render it anywhere in your application. 
+
+```jsx
 import React from 'react';
-import ChromeDinoGame from 'react-chrome-dino';
+import ChromeDinoGame from '@a7mddra/react-dino-game';
+import '@a7mddra/react-dino-game/dist/style.css';
 
-const App = () => (
-  <ChromeDinoGame />
-);
-
-export default App;
+export default function App() {
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h1>My App</h1>
+      
+      {/* Render the game component */}
+      <ChromeDinoGame />
+    </div>
+  );
+}
 ```
 
-Check [`src/demo`](src/demo) for a usage example.
+> **Note:** The game is styled to fit within its container. For the best experience, wrap it in a container with a defined width.
+
+## Local Development
+
+If you'd like to run this repository locally to test or contribute:
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the Vite dev server (this will run the `src/demo` app):
+   ```bash
+   npm run dev
+   ```
+4. To build the library for production:
+   ```bash
+   npm run build
+   ```
 
 ## License
 
-This library is licensed under MIT.
-
-The game javascript & css is licensed under BSD as follow:
-
-```
-// Copyright (c) 2014 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file here: https://cs.chromium.org/chromium/src/LICENSE. 
-```
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start` or `yarn start`
-
-Runs the library in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-### `npm run test` or `yarn run test`
-
-Runs the test watcher in an interactive mode.
-
-### `npm run build` or `yarn build`
-
-Builds the library for production to the `build` folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-### `npm publish`
-
-Publishes the library to NPM.
+MIT

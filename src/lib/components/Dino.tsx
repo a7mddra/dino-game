@@ -7,17 +7,19 @@ import DinoStyle from './DinoStyle';
 import './Dino.css';
 
 class ChromeDinoComponent extends React.Component {
+  startDiv: HTMLDivElement | null = null;
+  endDiv: HTMLDivElement | null = null;
   appendDinoScript() {
     let dinoScriptContainer = document.createElement("script");
     dinoScriptContainer.appendChild(document.createTextNode(DinoScript)); 
-    this.startDiv.appendChild(dinoScriptContainer);
+    if (this.startDiv) this.startDiv.appendChild(dinoScriptContainer);
   }
 
   appendRunnerScript() {
     let runnerScriptContainer = document.createElement("script");
     runnerScriptContainer.appendChild(document.createTextNode(`new Runner('.interstitial-wrapper');`)); 
 
-    this.endDiv.appendChild(runnerScriptContainer);
+    if (this.endDiv) this.endDiv.appendChild(runnerScriptContainer);
   }
 
   componentDidMount() {
